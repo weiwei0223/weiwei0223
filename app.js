@@ -6,12 +6,7 @@ function Map(id){
     this.map = new BMap.Map(id);
     //设置地图的中心点和缩放比例 初始化地图
     this.map.centerAndZoom("北京");
-}prototype.addPanorama = function () {
-    var panorama = new BMap.PanoramaControl();
-
-    this.map.addControl(panorama);
-};
-
+this.updateUserLocation();}
 //定位
 Map.prototype.currentPosition = function () {
 
@@ -50,7 +45,6 @@ Map.prototype.updateUserLocation = function () {
 
     }.bind(this));
 };
-
 //始化应用程序的方法
 function init() {
     var map = new Map("mapContainer");
